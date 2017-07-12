@@ -1,0 +1,36 @@
+{
+  "name": "auto-click",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "开启后可实现无人值守，模拟点击",
+  "icons": {
+    "128": "img/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "32": "img/close32.png"
+    },
+    "default_title": "auto-click",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "*://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.baidu.com/"
+      ],
+      "js": [
+        "js/robot.js"
+      ]
+    }
+  ]
+}
